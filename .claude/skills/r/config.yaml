@@ -1,0 +1,20 @@
+# /r request-protocol configuration.
+#
+# This file is committed and must always exist: it is the schema of record, so a key that
+# does not appear here is not a setting. To change a value on one machine, do NOT edit this
+# file — create `config.local.yaml` beside it. That file is gitignored, optional, and any
+# key it defines wins; keys it omits fall through to here.
+#
+# Read the effective value mechanically rather than by hand:
+#     python3 .claude/skills/r/r_protocol.py config --key history_path
+#
+# history_path — where request history is written. One file per recorded request,
+# <YYYYMMDD-HHMMSS>-<rname>.md, holding all human and agent turns of that request.
+# Resolved relative to THIS directory unless the value is absolute or begins with `~`.
+# A relative path therefore lands inside whichever worktree is running; for one shared
+# location across every worktree, set an absolute or `~`-anchored path in
+# config.local.yaml.
+#
+# Must not point into a tree owned by another skill (`.memory/` is /mem's, `intent/`
+# is /captain's).
+history_path: .requests
