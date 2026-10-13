@@ -17,4 +17,4 @@
 #
 # Must not point into a tree owned by another skill (`.memory/` is /mem's, `intent/`
 # is /captain's).
-history_path: ~/EXPERIMENT/git/startup/.requests
+history_path: ~/EXPERIMENT/git/eproject/.requests
